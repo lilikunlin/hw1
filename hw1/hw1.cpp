@@ -66,8 +66,11 @@ std::vector<std::pair<int, int>> multiplyPolynomials(const std::vector<std::pair
 }
 
 int main() {
-    std::string input1 = "3 3 -5 1 7 0";
-    std::string input2 = "2 2 4 1 -3 0";
+    std::string input1, input2;
+    std::cout << "請輸入第一個多項式: ";
+    std::getline(std::cin, input1);
+    std::cout << "請輸入第二個多項式: ";
+    std::getline(std::cin, input2);
 
     auto poly1 = parsePolynomial(input1);
     auto poly2 = parsePolynomial(input2);
