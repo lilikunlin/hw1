@@ -9,8 +9,9 @@
 std::vector<std::pair<int, int>> parsePolynomial(const std::string& input) {
     std::vector<std::pair<int, int>> polynomial;
     std::istringstream iss(input);
+    char ch;
     int coefficient, exponent;
-    while (iss >> coefficient >> exponent) {
+    while (iss >> ch >> coefficient >> ch >> exponent >> ch) {
         polynomial.emplace_back(coefficient, exponent);
     }
     return polynomial;
@@ -67,9 +68,10 @@ std::vector<std::pair<int, int>> multiplyPolynomials(const std::vector<std::pair
 
 int main() {
     std::string input1, input2;
-    std::cout << "請輸入第一個多項式: ";
+
+    std::cout << "請輸入第一個多項式 (格式: (係數, 指數, 係數, 指數, ...)): ";
     std::getline(std::cin, input1);
-    std::cout << "請輸入第二個多項式: ";
+    std::cout << "請輸入第二個多項式 (格式: (係數, 指數, 係數, 指數, ...)): ";
     std::getline(std::cin, input2);
 
     auto poly1 = parsePolynomial(input1);
